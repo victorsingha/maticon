@@ -7,9 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  showCopied=false
+  name=""
+
   logo = "<mat-icon>3d_rotation</mat-icon>"
 
   copyMessage(val: string){
+    this.name = val;
+    val="<mat-icon>"+val+"</mat-icon>"
+    this.name = val;
     const selBox = document.createElement('textarea');
     selBox.style.position = 'fixed';
     selBox.style.left = '0';
@@ -21,6 +27,11 @@ export class AppComponent {
     selBox.select();
     document.execCommand('copy');
     document.body.removeChild(selBox);
+
+    this.showCopied = true;
+    (setTimeout(() => {
+      this.showCopied=false;
+    }, 3000))
   }
 
   title = 'maticon';
