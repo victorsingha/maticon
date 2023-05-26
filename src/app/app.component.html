@@ -1,44 +1,43 @@
-
 <router-outlet></router-outlet>
 
+<main class="gradientbg">
+  <span *ngIf="showCopied" class="copied">copied `{{name}}`</span>
 
-<span *ngIf="showCopied" class="copied">copied `{{name}}`</span>
+  <pre
+    style="display: flex; justify-content: center; align-items: center;margin: 0px;font-weight: bold;padding-top: 10px;">{{logo}}</pre>
+  <pre
+    style="display: flex; justify-content: center; align-items: center;margin: 0px;font-size: 13px;">Made with <mat-icon style="color: #fb7185;">favorite</mat-icon> by Victor.</pre>
 
+  <section class="container"  style="display: flex;flex-wrap: wrap;overflow-x: hidden;">
+    <div *ngFor="let obj of icons" style="position: relative;">
+      <div class="headerCl" *ngIf="obj.type=='header'">
+        ## {{obj.name}}</div>
+      <!-- <div class="popup" *ngIf="obj.name=='fingerprint'">copied</div> -->
+      <mat-icon class="iconMat" (click)="copyMessage(obj.name)" *ngIf="obj.type=='icon'">{{obj.name}}</mat-icon>
+    </div>
+  </section>
 
-<pre style="display: flex; justify-content: center; align-items: center;margin: 0px;font-weight: bold;margin-top: 10px;">{{logo}}</pre>
+  <div style="height: 150px;"></div>
 
-<pre
-  style="display: flex; justify-content: center; align-items: center;margin: 0px;">Made with <mat-icon style="color: #fb7185;">favorite</mat-icon> by Victor.</pre>
-
-
-<main class="container" style="display: flex;flex-wrap: wrap;overflow-x: hidden;">
-  <div *ngFor="let obj of icons" style="position: relative;">
-    <div class="headerCl" *ngIf="obj.type=='header'">
-     ## {{obj.name}}</div>
-     <!-- <div class="popup" *ngIf="obj.name=='fingerprint'">copied</div> -->
-    <mat-icon class="iconMat" (click)="copyMessage(obj.name)" *ngIf="obj.type=='icon'">{{obj.name}}</mat-icon>
-  </div>
+  <footer>
+    <div class="footerImg">
+      <img class="catimg" src="assets/cat.jpg" alt="cat_">
+    </div>
+    <div class="footer">
+      <a style="color: #0a66c2;" href="https://www.linkedin.com/in/victor-singha-48b479148/"
+        target="_blank">linkedin</a>
+      <span>2023</span>
+      <mat-icon>landscape</mat-icon>
+      <a style="color:#fb7185 ;" href="https://material.angular.io/components/icon/overview" target="_blank">Made for
+        Angular Material Icons</a>
+    </div>
+  </footer>
 </main>
 
 
-<div style="height: 150px;"></div>
-
-<footer>
-  <div class="footerImg">
-  <img class="catimg" src="assets/cat.jpg" alt="cat_">
-  </div>
-  <div class="footer">
-    <a style="color: #0a66c2;" href="https://www.linkedin.com/in/victor-singha-48b479148/" target="_blank">linkedin</a>
-    <span>2023</span> 
-     <mat-icon>landscape</mat-icon>
-     <a style="color:#fb7185 ;" href="https://material.angular.io/components/icon/overview" target="_blank">Made for Angular Material Icons</a>
-    </div>
-</footer>
 
 
-
-
-<main *ngIf="false">
+<!-- <main>
   <h2>mat-icon List Category-Action</h2>
   <mat-icon>3d_rotation</mat-icon>
   <mat-icon>accessibility</mat-icon>
@@ -1057,4 +1056,4 @@
   <mat-icon>thumb_down_alt</mat-icon>
   <mat-icon>thumb_up_alt</mat-icon>
   <mat-icon>whatshot</mat-icon>
-</main>
+</main> -->
