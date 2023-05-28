@@ -14,8 +14,8 @@ export class AppComponent {
 
   copyMessage(val: string){
     this.name = val;
-    val="<mat-icon>"+val+"</mat-icon>"
-    this.name = val;
+    // val="<mat-icon>"+val+"</mat-icon>"
+    // this.name = val;
     const selBox = document.createElement('textarea');
     selBox.style.position = 'fixed';
     selBox.style.left = '0';
